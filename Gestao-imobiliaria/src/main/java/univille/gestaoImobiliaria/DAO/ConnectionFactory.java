@@ -25,7 +25,7 @@ public class ConnectionFactory {
     }
 
     // Retorna a instância única da ConnectionFactory
-    public static ConnectionFactory getInstance(){
+    public static    getInstance(){
         if(instance==null)instance  = new ConnectionFactory();
         return instance;
     }
