@@ -15,17 +15,19 @@ public class Tarefa {
     private Long id;
     private String descricao;
     private boolean finalizada;
-    private LocalDateTime dataCriacao;
-    private LocalDateTime dataFinalizacao;
-    private LocalDateTime dataPrevFin;
+    private LocalDate dataCriacao;
+    private LocalDate dataFinalizacao;
+    private LocalDate dataPrevFin;
 
     public Tarefa() {
     }
 
-    public Tarefa(Long id, String descricao, boolean finalizada, LocalDateTime dataCriacao, LocalDateTime dataFinalizacao, LocalDateTime dataPrevFin) {
+    public Tarefa(Long id, String descricao, boolean finalizada, LocalDate dataCriacao, LocalDate dataFinalizacao, LocalDate dataPrevFin) {
         this.id = id;
         this.descricao = descricao;
-        this.finalizada = finalizada;
+        this.finalizada = (dataFinalizacao != null) &&
+                (dataFinalizacao.isEqual(dataCriacao) || dataFinalizacao.isAfter(dataCriacao));
+
         this.dataCriacao = dataCriacao;
         this.dataFinalizacao = dataFinalizacao;
         this.dataPrevFin = dataPrevFin;
@@ -55,27 +57,27 @@ public class Tarefa {
         this.finalizada = finalizada;
     }
 
-    public LocalDateTime getDataCriacao() {
+    public LocalDate getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(LocalDateTime dataCriacao) {
+    public void setDataCriacao(LocalDate dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
-    public LocalDateTime getDataFinalizacao() {
+    public LocalDate getDataFinalizacao() {
         return dataFinalizacao;
     }
 
-    public void setDataFinalizacao(LocalDateTime dataFinalizacao) {
+    public void setDataFinalizacao(LocalDate dataFinalizacao) {
         this.dataFinalizacao = dataFinalizacao;
     }
 
-    public LocalDateTime getDataPrevFin() {
+    public LocalDate getDataPrevFin() {
         return dataPrevFin;
     }
 
-    public void setDataPrevFin(LocalDateTime dataPrevFin) {
+    public void setDataPrevFin(LocalDate dataPrevFin) {
         this.dataPrevFin = dataPrevFin;
     }
 

@@ -1,5 +1,5 @@
 package com.diogo.demo;
-import org.springframework.data.jpa.repository.DemoApplication;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TarefaRepository extends DemoApplication<Tarefa,Long>{
+public interface TarefaRepository extends JpaRepository<Tarefa,Long> {
 }
