@@ -10,9 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@NoArgsConstructor
-@SpringBootApplication
-@AllArgsConstructor
 
 @Entity
 public class Pessoa {
