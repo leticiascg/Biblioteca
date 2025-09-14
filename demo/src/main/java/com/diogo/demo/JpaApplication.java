@@ -51,7 +51,7 @@ public class JpaApplication {
 			System.out.println();
 			System.out.println("Tarefas realizadas após a data prevista");
 			System.out.println("---------------------------------------");
-			repos.findByDataPrevFinLessThenDataFinalizacao().forEach(ap->
+			repos.findTarefasEntreguesAtrasados().forEach(ap->
 					System.out.println("[ "+ ap.getId()+" ] "+ ap.getDescricao()));
 		};
 	}
