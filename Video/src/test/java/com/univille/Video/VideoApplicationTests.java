@@ -1,4 +1,4 @@
-package diogo.univille.Video;
+package com.univille.Video;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
